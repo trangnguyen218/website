@@ -104,6 +104,29 @@
         justify-content: space-between;
         align-items: center;
       }
+         /* Thanh trạng thái kho */
+      .product-stock {
+        background: #fff7f0;
+        padding: 6px 8px;
+        border-top: 1px solid #f0e0d3;
+        margin-top: 10px;
+        border-radius: 20px;
+      }
+      .stock-progress {
+        margin-bottom: 0;
+        height: 22px;
+        background-color: #ffe3cc;
+        border-radius: 20px;
+        box-shadow: none;
+      }
+      .stock-progress .progress-bar {
+        background-color: #ff7f32;
+        font-size: 11px;
+        line-height: 22px;
+        border-radius: 20px;
+        text-align: center;
+        white-space: nowrap;
+      }
     </style>
   </head>
   <body>
@@ -333,9 +356,25 @@
               <div>⭐⭐⭐⭐⭐</div>
               <a href="#" style="font-size:14px;">15 đánh giá</a>
             </div>
-          </div>
-        </div>
-
+           <!-- Trạng thái kho -->
+            <div class="product-stock">
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="progress stock-progress">
+                    <div class="progress-bar progress-bar-warning" style="width:60%;">
+                      Đã bán 12
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <div class="progress stock-progress">
+                    <div class="progress-bar progress-bar-warning" style="width:100%;">
+                      0 ngày 02:36:10
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         <!-- Product 2 -->
         <div class="col-sm-6 col-md-4">
           <div class="product-card">
@@ -355,9 +394,25 @@
               <div>⭐⭐⭐⭐☆</div>
               <a href="#" style="font-size:14px;">10 đánh giá</a>
             </div>
-          </div>
-        </div>
-
+           <!-- Trạng thái kho -->
+            <div class="product-stock">
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="progress stock-progress">
+                    <div class="progress-bar progress-bar-warning" style="width:40%;">
+                      Đã bán 8
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <div class="progress stock-progress">
+                    <div class="progress-bar progress-bar-warning" style="width:100%;">
+                      1 ngày 05:20:00
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         <!-- Product 3 -->
         <div class="col-sm-6 col-md-4">
           <div class="product-card">
@@ -377,9 +432,25 @@
               <div>⭐⭐⭐⭐☆</div>
               <a href="#" style="font-size:14px;">20 đánh giá</a>
             </div>
-          </div>
-        </div>
-
+         <!-- Trạng thái kho -->
+            <div class="product-stock">
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="progress stock-progress">
+                    <div class="progress-bar progress-bar-warning" style="width:80%;">
+                      Đã bán 20
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <div class="progress stock-progress">
+                    <div class="progress-bar progress-bar-warning" style="width:100%;">
+                      Sắp bán hết
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
       </div><!-- /.row sản phẩm -->
     </div><!-- /.col-sm-8 col-md-9 -->
 
