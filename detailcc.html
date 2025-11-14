@@ -10,9 +10,13 @@
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- xZoom CSS - dùng CDN cho chắc chắn -->
+  <!-- xZoom CSS (đúng đường dẫn thư mục của bạn) -->
   <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.min.css" media="all">
+        href="xZoom-master/dist/xzoom.min.css" media="all">
+
+  <!-- Fancybox CSS (zoom fullscreen) -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
 
   <style>
     body {
@@ -21,12 +25,15 @@
       font-family: "Helvetica Neue", Arial, sans-serif;
     }
     .xzoom-container { margin-bottom: 10px; }
+
     .xzoom {
       width: 100%;
       max-height: 450px;
-      object-fit: cover;
       border-radius: 6px;
+      object-fit: contain; /* không bị cắt ảnh */
+      cursor: zoom-in;
     }
+
     .xzoom-gallery {
       width: 75px;
       height: 75px;
@@ -34,7 +41,9 @@
       border-radius: 6px;
       margin-right: 10px;
       margin-top: 5px;
+      cursor: pointer;
     }
+
     .ratings span { color: #f0ad4e; }
     .description { margin-top: 12px; }
   </style>
@@ -60,15 +69,13 @@
                  alt="Set 6 Cupcake Nhiều Vị">
           </div>
 
-          <!-- Thumbnail -->
-          <div class="xzoom-thumbs">
-            <a href="img/cc.jpg">
-              <img class="xzoom-gallery"
-                   src="img/cc.jpg"
-                   xpreview="img/cc.jpg"
-                   xoriginal="img/cc.jpg"
-                   alt="Set 6 Cupcake Nhiều Vị">
-            </a>
+          <!-- Ảnh nhỏ (nếu sau này bạn có nhiều ảnh thì thêm img khác vào đây) -->
+          <div>
+            <img class="xzoom-gallery"
+                 src="img/cc.jpg"
+                 xpreview="img/cc.jpg"
+                 xoriginal="img/cc.jpg"
+                 alt="Set 6 Cupcake Nhiều Vị">
           </div>
         </div> <!-- /col-sm-6 ảnh -->
 
@@ -108,20 +115,35 @@
   </div> <!-- /row -->
 </div> <!-- /container -->
 
-<!-- jQuery (bắt buộc trước xZoom) -->
+<!-- jQuery (bắt buộc trước xZoom & Fancybox) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- xZoom JS - dùng CDN -->
-<script src="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.min.js"></script>
+<!-- xZoom JS (đúng đường dẫn) -->
+<script src="xZoom-master/dist/xzoom.min.js"></script>
+
+<!-- Fancybox JS -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
 <script>
   $(document).ready(function () {
-    $('.xzoom, .xzoom-gallery').xzoom({
+    // Zoom khi rê chuột
+    $(".xzoom, .xzoom-gallery").xzoom({
       position: 'right',
       zoomWidth: 500,
       tint: '#333',
       Xoffset: 15
+    });
+
+    // Click vào ảnh để phóng to fullscreen bằng Fancybox
+    $('.xzoom').on('click', function (e) {
+      e.preventDefault();
+      var src = $(this).attr('xoriginal') || $(this).attr('src');
+
+      Fancybox.show([
+        { src: src, type: 'image' }
+      ]);
     });
   });
 </script>
