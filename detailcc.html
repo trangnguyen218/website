@@ -10,42 +10,44 @@
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- xZoom CSS (đúng đường dẫn thư mục của bạn) -->
+  <!-- xZoom CSS: đúng thư mục em đang dùng -->
   <link rel="stylesheet" type="text/css"
         href="xZoom-master/dist/xzoom.min.css" media="all">
 
-  <!-- Fancybox CSS (zoom fullscreen) -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
-
   <style>
-    body {
+    body{
       padding-top: 20px;
       padding-bottom: 40px;
       font-family: "Helvetica Neue", Arial, sans-serif;
     }
-    .xzoom-container { margin-bottom: 10px; }
 
-    .xzoom {
-      width: 100%;
-      max-height: 450px;
-      border-radius: 6px;
-      object-fit: contain; /* không bị cắt ảnh */
-      cursor: zoom-in;
+    /* Khung ảnh chính */
+    .xzoom-container{
+      border: 1px solid #eee;
+      padding: 10px;
+      background:#fafafa;
+      display: inline-block;
     }
 
-    .xzoom-gallery {
-      width: 75px;
-      height: 75px;
-      object-fit: cover;
+    .xzoom{
+      width: 100%;
+      max-width: 400px;     /* ảnh hiển thị khoảng 400px */
+      height: auto;
       border-radius: 6px;
-      margin-right: 10px;
-      margin-top: 5px;
+    }
+
+    /* Thumbnail */
+    .xzoom-gallery{
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-top: 10px;
+      margin-right: 8px;
       cursor: pointer;
     }
 
-    .ratings span { color: #f0ad4e; }
-    .description { margin-top: 12px; }
+    .ratings span{ color:#f0ad4e; }
   </style>
 </head>
 <body>
@@ -55,95 +57,77 @@
   <hr>
 
   <div class="row">
-    <div class="col-sm-8 col-md-9">
-      <div class="row">
+    <!-- Cột ảnh + zoom -->
+    <div class="col-sm-6">
+      <div class="xzoom-container">
+        <!-- Ảnh hiển thị nhỏ: cc-small.jpg
+             Ảnh gốc để zoom: cc-large.jpg -->
+        <img class="xzoom img-responsive"
+             id="xzoom-default"
+             src="img/cc-small.jpg"
+             xoriginal="img/cc-large.jpg"
+             alt="Set 6 Cupcake Nhiều Vị">
+      </div>
 
-        <!-- CỘT ẢNH ZOOM -->
-        <div class="col-sm-6">
-          <div class="xzoom-container">
-            <!-- Ảnh chính -->
-            <img class="xzoom img-responsive"
-                 id="xzoom-default"
-                 src="img/cc.jpg"
-                 xoriginal="img/cc.jpg"
-                 alt="Set 6 Cupcake Nhiều Vị">
-          </div>
+      <!-- Thumbnail (có thể thêm nhiều ảnh khác) -->
+      <div>
+        <img class="xzoom-gallery"
+             src="img/cc-small.jpg"
+             xpreview="img/cc-small.jpg"
+             xoriginal="img/cc-large.jpg"
+             alt="Set 6 Cupcake Nhiều Vị">
+      </div>
+    </div>
 
-          <!-- Ảnh nhỏ (nếu sau này bạn có nhiều ảnh thì thêm img khác vào đây) -->
-          <div>
-            <img class="xzoom-gallery"
-                 src="img/cc.jpg"
-                 xpreview="img/cc.jpg"
-                 xoriginal="img/cc.jpg"
-                 alt="Set 6 Cupcake Nhiều Vị">
-          </div>
-        </div> <!-- /col-sm-6 ảnh -->
+    <!-- Cột mô tả -->
+    <div class="col-sm-6">
+      <h4 class="pull-right">150.000đ</h4>
+      <h4>Set 6 Cupcake Nhiều Vị</h4>
+      <p>Combo 6 cupcake thơm ngon nhiều vị: vani, socola, matcha, dâu…</p>
 
-        <!-- CỘT MÔ TẢ -->
-        <div class="col-sm-6">
-          <h4 class="pull-right">150.000đ</h4>
-          <h4>Set 6 Cupcake Nhiều Vị</h4>
-          <p>Combo 6 cupcake thơm ngon nhiều vị: vani, socola, matcha, dâu…</p>
+      <form>
+        <div class="form-group">
+          <label>Số lượng set</label>
+          <input type="number" class="form-control" value="1" min="1">
+        </div>
 
-          <form>
-            <div class="form-group">
-              <label>Số lượng set</label>
-              <input type="number" class="form-control" value="1" min="1">
-            </div>
+        <div class="form-group">
+          <label>Hương vị chính</label>
+          <select class="form-control">
+            <option>Mix nhiều vị</option>
+            <option>Socola</option>
+            <option>Vani</option>
+            <option>Matcha</option>
+          </select>
+        </div>
 
-            <div class="form-group">
-              <label>Hương vị chính</label>
-              <select class="form-control">
-                <option>Mix nhiều vị</option>
-                <option>Socola</option>
-                <option>Vani</option>
-                <option>Matcha</option>
-              </select>
-            </div>
+        <button type="submit" class="btn btn-success">Thêm vào giỏ</button>
+      </form>
 
-            <button type="submit" class="btn btn-success">Thêm vào giỏ</button>
-          </form>
+      <div class="ratings" style="margin-top:10px;">
+        <p class="pull-right">10 đánh giá</p>
+        ⭐⭐⭐⭐☆
+      </div>
+    </div>
+  </div>
+</div>
 
-          <div class="ratings" style="margin-top:10px;">
-            <p class="pull-right">10 đánh giá</p>
-            ⭐⭐⭐⭐☆
-          </div>
-        </div> <!-- /col-sm-6 mô tả -->
-
-      </div> <!-- /row -->
-    </div> <!-- /col-sm-8 col-md-9 -->
-  </div> <!-- /row -->
-</div> <!-- /container -->
-
-<!-- jQuery (bắt buộc trước xZoom & Fancybox) -->
+<!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- xZoom JS (đúng đường dẫn) -->
+<!-- xZoom JS -->
 <script src="xZoom-master/dist/xzoom.min.js"></script>
-
-<!-- Fancybox JS -->
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-
 <script>
   $(document).ready(function () {
-    // Zoom khi rê chuột
-    $(".xzoom, .xzoom-gallery").xzoom({
-      position: 'right',
-      zoomWidth: 500,
+    $('.xzoom, .xzoom-gallery').xzoom({
+      position: 'right',    // khung zoom nằm bên phải
+      zoomWidth: 600,       // khung zoom to (giống demo xe)
+      zoomHeight: 600,
+      Xoffset: 20,
       tint: '#333',
-      Xoffset: 15
-    });
-
-    // Click vào ảnh để phóng to fullscreen bằng Fancybox
-    $('.xzoom').on('click', function (e) {
-      e.preventDefault();
-      var src = $(this).attr('xoriginal') || $(this).attr('src');
-
-      Fancybox.show([
-        { src: src, type: 'image' }
-      ]);
+      lens: true            // có ô vuông trên ảnh
     });
   });
 </script>
