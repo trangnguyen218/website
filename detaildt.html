@@ -18,27 +18,21 @@
         integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
 
+  <!-- xZoom CSS -->
+  <link rel="stylesheet" type="text/css" href="xzoom/xzoom.css" media="all"/>
+
   <style>
     body {
       padding-top: 20px;
       padding-bottom: 40px;
       font-family: "Helvetica Neue", Arial, sans-serif;
     }
-    .thumbnail {
-      position: relative;
-    }
-    .thumbnails img {
-      margin-bottom: 10px;
-    }
-    .ratings span {
-      color: #f0ad4e;
-    }
-    .description {
-      margin-top: 10px;
-    }
-    .well {
-      margin-top: 20px;
-    }
+    .thumbnail { border: none; box-shadow: none; }
+    .ratings span { color: #f0ad4e; }
+    .description { margin-top: 10px; }
+    .well { margin-top: 20px; }
+    .xzoom-container { margin-bottom: 10px; }
+    .xzoom-gallery img { margin-right: 8px; }
   </style>
 </head>
 <body>
@@ -53,19 +47,29 @@
     <div class="col-sm-8 col-md-9">
       <div class="thumbnail">
         <div class="row">
-          <!-- Cột trái: Hình lớn + hình nhỏ -->
-          <div class="col-sm-6">
-            <!-- Hình lớn (bánh Cheesecake Dâu) -->
-            <img class="img-responsive" src="img/dautay.jpg"
-                 alt="Cheesecake Dâu Tươi" />
 
-            <!-- Các hình nhỏ (thumbnails) -->
-            <div class="thumbnails row" style="margin-top:10px;">
+          <!-- Cột trái: Ảnh + thumbnails dùng xZoom -->
+          <div class="col-sm-6">
+
+            <!-- Ảnh lớn -->
+            <div class="xzoom-container">
+              <img
+                class="xzoom img-responsive"
+                id="xzoom-default"
+                src="img/dautay.jpg"
+                xoriginal="img/dautay.jpg"
+                alt="Cheesecake Dâu Tươi">
+            </div>
+
+            <!-- Ảnh nhỏ chọn lựa -->
+            <div class="thumbnails row">
               <div class="col-xs-3">
-                <a href="#">
-                  <img src="img/dautay.jpg"
-                       alt="Cheesecake Dâu Tươi"
-                       class="img-thumbnail img-responsive" />
+                <a href="img/dautay.jpg">
+                  <img
+                    src="img/dautay.jpg"
+                    class="xzoom-gallery img-thumbnail img-responsive"
+                    xpreview="img/dautay.jpg"
+                    alt="Cheesecake Dâu Tươi">
                 </a>
               </div>
             </div>
@@ -73,20 +77,18 @@
 
           <!-- Cột phải: Mô tả + form đặt bánh -->
           <div class="col-sm-6">
-            <!-- Description -->
             <h4 class="pull-right">180.000đ</h4>
             <h4>Cheesecake Dâu Tươi</h4>
             <p>
               Bánh phô mai béo mịn kết hợp dâu tươi chua nhẹ, phù hợp cho tiệc sinh nhật,
-              họp mặt bạn bè hoặc làm quà tặng ngọt ngào. Lớp đế bánh giòn nhẹ, 
+              họp mặt bạn bè hoặc làm quà tặng ngọt ngào. Lớp đế bánh giòn nhẹ,
               phần cheesecake mềm mịn và topping dâu tươi trang trí bắt mắt.
             </p>
 
-            <!-- Form đặt bánh -->
             <form role="form">
               <div class="number form-group">
                 <label>Số lượng</label>
-                <input type="number" class="input-sm form-control" id="number" value="1" min="1" />
+                <input type="number" class="input-sm form-control" id="number" value="1" min="1"/>
               </div>
 
               <div class="form-group">
@@ -113,7 +115,6 @@
               </div>
             </form>
 
-            <!-- Mô tả thêm -->
             <div class="description">
               <p>
                 Gợi ý: nên bảo quản trong ngăn mát tủ lạnh và dùng trong vòng 24 giờ
@@ -122,7 +123,6 @@
               </p>
             </div>
 
-            <!-- Ratings -->
             <div class="ratings">
               <p class="pull-right">3 đánh giá</p>
               <p>
@@ -191,6 +191,21 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+
+<!-- xZoom JS -->
+<script src="xzoom/xzoom.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('.xzoom, .xzoom-gallery').xzoom({
+      position: 'right',     // khung zoom hiện bên phải
+      zoomWidth: 400,        // chiều rộng khung zoom
+      tint: '#333',          // màu overlay
+      Xoffset: 15,           // khoảng cách với hình chính
+      title: false
+    });
+  });
+</script>
 
 </body>
 </html>
