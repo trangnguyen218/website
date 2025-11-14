@@ -8,19 +8,14 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- Optional theme -->
+  <!-- Optional theme (không bắt buộc) -->
   <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
-  <!-- xZoom CSS (đúng đường dẫn theo folder xZoom-master/dist)-->
-  <link rel="stylesheet" type="text/css"
-        href="xZoom-master/dist/xzoom.min.css" media="all"/>
+  <!-- xZoom CSS: ĐÚNG ĐƯỜNG DẪN -->
+  <link rel="stylesheet" type="text/css" href="xZoom-master/dist/xzoom.min.css" media="all"/>
 
   <style>
     body {
@@ -43,6 +38,9 @@
     .xzoom-gallery {
       margin-right: 8px;
       border-radius: 4px;
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
     }
   </style>
 </head>
@@ -75,14 +73,12 @@
             <!-- Ảnh nhỏ chọn lựa -->
             <div class="thumbnails row">
               <div class="col-xs-3">
-                <a href="img/dautay.jpg">
-                  <img
-                    src="img/dautay.jpg"
-                    class="xzoom-gallery img-thumbnail img-responsive"
-                    xpreview="img/dautay.jpg"
-                    xoriginal="img/dautay.jpg"
-                    alt="Cheesecake Dâu Tươi">
-                </a>
+                <img
+                  src="img/dautay.jpg"
+                  class="xzoom-gallery img-thumbnail img-responsive"
+                  xpreview="img/dautay.jpg"
+                  xoriginal="img/dautay.jpg"
+                  alt="Cheesecake Dâu Tươi">
               </div>
             </div>
           </div>
@@ -197,14 +193,12 @@
   </div><!-- /.row -->
 </div><!-- /.container -->
 
-<!-- jQuery -->
+<!-- jQuery (PHẢI trước xzoom) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- xZoom JS (đúng đường dẫn) -->
+<!-- xZoom JS: ĐÚNG ĐƯỜNG DẪN -->
 <script src="xZoom-master/dist/xzoom.min.js"></script>
 
 <script>
