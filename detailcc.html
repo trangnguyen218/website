@@ -14,8 +14,9 @@
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
-  <!-- xZoom CSS: ĐÚNG ĐƯỜNG DẪN (giống file Cheesecake) -->
-  <link rel="stylesheet" type="text/css" href="xZoom-master/dist/xzoom.min.css" media="all"/>
+  <!-- xZoom CSS: DÙNG CDN GIỐNG FILE CHEESECAKE -->
+  <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.min.css" media="all"/>
 
   <style>
     body {
@@ -28,7 +29,7 @@
     .description { margin-top: 10px; }
     .well { margin-top: 20px; }
 
-    .xzoom-container { margin-bottom: 10px; }
+    .xzoom-container { margin-bottom: 10px; max-width: 350px; }
     .xzoom {
       width: 100%;
       max-height: 420px;
@@ -93,9 +94,9 @@
             </p>
 
             <form role="form">
-              <div class="number form-group">
+              <div class="form-group">
                 <label>Số lượng set</label>
-                <input type="number" class="input-sm form-control" value="1" min="1"/>
+                <input type="number" class="form-control" value="1" min="1">
               </div>
 
               <div class="form-group">
@@ -114,38 +115,14 @@
               </div>
             </form>
 
-            <div class="description">
-              <p>
-                Gợi ý: nên dùng trong ngày để giữ độ mềm và độ ẩm bánh ngon nhất.
-                Có thể bảo quản trong ngăn mát tủ lạnh nếu chưa dùng ngay.
-              </p>
-            </div>
-
-            <div class="ratings">
+            <div class="ratings" style="margin-top:10px;">
               <p class="pull-right">10 đánh giá</p>
-              <p>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-                4.0 sao
-              </p>
+              ⭐⭐⭐⭐☆
             </div>
-
           </div><!-- /.col-sm-6 -->
+
         </div><!-- /.row -->
       </div><!-- /.thumbnail -->
-
-      <!-- Khối review tổng + nút Viết đánh giá -->
-      <div class="well">
-        <div class="text-right">
-          <a class="btn btn-success">Viết đánh giá</a>
-        </div>
-      </div>
-
-      <!-- (Nếu muốn, bạn có thể thêm comment giống file Cheesecake ở đây) -->
-
     </div><!-- /.col-sm-8 col-md-9 -->
   </div><!-- /.row -->
 </div><!-- /.container -->
@@ -155,7 +132,7 @@
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- xZoom JS: giống cách bạn dùng trong file Cheesecake -->
+<!-- xZoom JS: DÙNG CDN GIỐNG FILE CHEESECAKE -->
 <script src="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.min.js"></script>
 <script>
   $(document).ready(function () {
