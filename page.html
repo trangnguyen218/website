@@ -53,6 +53,22 @@
         object-fit: contain; /* Hiển thị đầy đủ, không cắt */
         background-color: #f9f9f9; /* Tạo nền nhẹ nếu ảnh không đủ full */
       }
+      .product-card {
+        height: 520px; /* chỉnh chiều cao theo ý bạn */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .product-card img {
+        height: 270px; /* ảnh cùng chiều cao */
+        object-fit: cover; /* tránh méo hình */
+        width: 100%;
+      }
+
+      .caption {
+        flex-grow: 1;
+      }
     </style>
   </head>
   <body>
