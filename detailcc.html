@@ -10,9 +10,9 @@
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- xZoom CSS (đúng đường dẫn) -->
+  <!-- xZoom CSS - dùng CDN cho chắc chắn -->
   <link rel="stylesheet" type="text/css"
-        href="xZoom-master/dist/xzoom.min.css" media="all">
+        href="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.min.css" media="all">
 
   <style>
     body {
@@ -52,6 +52,7 @@
         <!-- CỘT ẢNH ZOOM -->
         <div class="col-sm-6">
           <div class="xzoom-container">
+            <!-- Ảnh chính -->
             <img class="xzoom img-responsive"
                  id="xzoom-default"
                  src="img/cc.jpg"
@@ -59,12 +60,15 @@
                  alt="Set 6 Cupcake Nhiều Vị">
           </div>
 
-          <div>
-            <img class="xzoom-gallery"
-                 src="img/cc.jpg"
-                 xpreview="img/cc.jpg"
-                 xoriginal="img/cc.jpg"
-                 alt="Set 6 Cupcake Nhiều Vị">
+          <!-- Thumbnail -->
+          <div class="xzoom-thumbs">
+            <a href="img/cc.jpg">
+              <img class="xzoom-gallery"
+                   src="img/cc.jpg"
+                   xpreview="img/cc.jpg"
+                   xoriginal="img/cc.jpg"
+                   alt="Set 6 Cupcake Nhiều Vị">
+            </a>
           </div>
         </div> <!-- /col-sm-6 ảnh -->
 
@@ -106,14 +110,14 @@
 
 <!-- jQuery (bắt buộc trước xZoom) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Bootstrap JS (không bắt buộc cho xZoom nhưng nên có) -->
+<!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- xZoom JS (đúng đường dẫn) -->
-<script src="xZoom-master/dist/xzoom.min.js"></script>
+<!-- xZoom JS - dùng CDN -->
+<script src="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.min.js"></script>
 <script>
   $(document).ready(function () {
-    $(".xzoom, .xzoom-gallery").xzoom({
+    $('.xzoom, .xzoom-gallery').xzoom({
       position: 'right',
       zoomWidth: 500,
       tint: '#333',
