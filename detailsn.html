@@ -173,12 +173,13 @@
         crossorigin="anonymous"></script>
 
 <!-- xZoom JS: đúng đường dẫn -->
-<script src="xZoom-master/dist/xzoom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.min.js"></script>
 <script>
   $(document).ready(function () {
-    $(".xzoom, .xzoom-gallery").xzoom({
-      zoomWidth: 400,
-      tint: "#333",
+    $('.xzoom, .xzoom-gallery').xzoom({
+      position: 'right',
+      zoomWidth: 500,
+      tint: '#333',
       Xoffset: 15
     });
   });
