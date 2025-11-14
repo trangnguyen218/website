@@ -54,20 +54,55 @@
         background-color: #f9f9f9; /* Tạo nền nhẹ nếu ảnh không đủ full */
       }
       .product-card {
-        height: 520px; /* chỉnh chiều cao theo ý bạn */
+        background: #fff;
+        border-radius: 8px;
+        border: 1px solid #eee;
+        padding: 15px;
+        height: 550px; /* tất cả thẻ đều cao bằng nhau */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        text-align: left;
+        transition: transform 0.25s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
       }
 
       .product-card img {
-        height: 270px; /* ảnh cùng chiều cao */
+        height: 260px; /* đồng đều chiều cao */
         object-fit: cover; /* tránh méo hình */
         width: 100%;
+        border-radius: 6px;
       }
 
-      .caption {
-        flex-grow: 1;
+      .product-title {
+        font-size: 17px;
+        font-weight: bold;
+        margin: 10px 0 5px 0;
+        color: #0a58ca;
+        min-height: 46px; /* để 2 dòng tiêu đề không đẩy lệch nhau */
+      }
+
+      .product-price {
+        font-size: 18px;
+        font-weight: bold;
+        color: #444;
+      }
+
+      .product-desc {
+        font-size: 14px;
+        color: #555;
+        min-height: 42px;
+        margin-bottom: 10px;
+      }
+
+      .product-rating {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
     </style>
   </head>
@@ -274,123 +309,73 @@
         </div>
 
         <!-- Cột phải: Products -->
-        <div class="col-sm-8 col-md-9">
-          <h3>Sản phẩm nổi bật</h3>
-          <div class="row">
-            <!-- Product 1 -->
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail product-card">
-                <img src="img/dautay.jpg" alt="Cheesecake dâu" />
-                <div class="add-to-cart">
-                  <a
-                    href="#"
-                    class="glyphicon glyphicon-plus-sign"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="Thêm vào giỏ"
-                  ></a>
-                </div>
-                <div class="caption">
-                  <h4 class="pull-right">180.000đ</h4>
-                  <h4>
-                    <a href="detaildt.html">Cheesecake Dâu Tươi</a>
-                  </h4>
-                  <p>Bánh phô mai béo mịn, kết hợp dâu tươi chua nhẹ.</p>
-                  <div class="ratings">
-                    <p class="pull-right">
-                      <a href="product.html#comments">15 đánh giá</a>
-                    </p>
-                    <p>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+       <div class="col-sm-6 col-md-4">
+  <div class="product-card">
+    <img src="img/dautay.jpg" alt="Cheesecake dâu">
+
+    <h4 class="product-title">
+      <a href="detaildt.html">Cheesecake Dâu Tươi</a>
+    </h4>
+
+    <div class="product-price">180.000đ</div>
+
+    <p class="product-desc">
+      Bánh phô mai béo mịn, kết hợp dâu tươi chua nhẹ.
+    </p>
+
+    <div class="product-rating">
+      <div>
+        ⭐⭐⭐⭐⭐
+      </div>
+      <a href="#" style="font-size:14px;">15 đánh giá</a>
+    </div>
+  </div>
+</div>
 
             <!-- Product 2 -->
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail product-card">
-                <img src="img/cc.jpg" alt="Set cupcake" />
-                <div class="add-to-cart">
-                  <a
-                    href="#"
-                    class="glyphicon glyphicon-plus-sign"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="Thêm vào giỏ"
-                  ></a>
-                </div>
-                <div class="caption">
-                  <h4 class="pull-right">150.000đ</h4>
-                  <h4>
-                    <a href="detailcc.html">Set 6 Cupcake Nhiều Vị</a>
-                  </h4>
-                  <p>Vani, socola, matcha, dâu... phù hợp cho tiệc nhỏ.</p>
-                  <div class="ratings">
-                    <p class="pull-right">
-                      <a href="product.html#comments">10 đánh giá</a>
-                    </p>
-                    <p>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star-empty"></span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+           <div class="col-sm-6 col-md-4">
+  <div class="product-card">
+    <img src="img/cc.jpg" alt="Set 6 Cupcake Nhiều Vị">
+
+    <h4 class="product-title">
+      <a href="detailcc.html">Set 6 Cupcake Nhiều Vị</a>
+    </h4>
+
+    <div class="product-price">150.000đ</div>
+
+    <p class="product-desc">
+      Vani, socola, matcha, dâu... phù hợp cho tiệc nhỏ.
+    </p>
+
+    <div class="product-rating">
+      <div>⭐⭐⭐⭐☆</div>
+      <a href="#" style="font-size:14px;">10 đánh giá</a>
+    </div>
+  </div>
+</div>
+
 
             <!-- Product 3 -->
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail product-card">
-                <img src="img/snhat.jpg" alt="Bánh kem sinh nhật" />
-                <div class="add-to-cart">
-                  <a
-                    href="#"
-                    class="glyphicon glyphicon-plus-sign"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="Thêm vào giỏ"
-                  ></a>
-                </div>
-                <div class="caption">
-                  <h4 class="pull-right">250.000đ</h4>
-                  <h4>
-                    <a href="detailsn.html">Bánh Kem Sinh Nhật</a>
-                  </h4>
-                  <p>
-                    Thiết kế theo yêu cầu, ghi tên miễn phí, giao trong ngày.
-                  </p>
-                  <div class="ratings">
-                    <p class="pull-right">
-                      <a href="product.html#comments">20 đánh giá</a>
-                    </p>
-                    <p>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star-empty"></span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.row -->
-        </div>
-        <!-- /.col-sm-8 col-md-9 -->
-      </div>
-      <!-- /.row -->
+   <div class="col-sm-6 col-md-4">
+  <div class="product-card">
+    <img src="img/snhat.jpg" alt="Bánh Kem Sinh Nhật">
+
+    <h4 class="product-title">
+      <a href="detailsn.html">Bánh Kem Sinh Nhật</a>
+    </h4>
+
+    <div class="product-price">250.000đ</div>
+
+    <p class="product-desc">
+      Thiết kế theo yêu cầu, ghi tên miễn phí, giao trong ngày.
+    </p>
+
+    <div class="product-rating">
+      <div>⭐⭐⭐⭐☆</div>
+      <a href="#" style="font-size:14px;">20 đánh giá</a>
     </div>
-    <!-- /.container -->
+  </div>
+</div>
 
     <!-- MODAL ĐĂNG NHẬP (tối giản, để nút Đăng nhập hoạt động) -->
     <div
