@@ -17,8 +17,9 @@
         integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
 
-  <!-- xZoom CSS: đúng đường dẫn theo ảnh (xZoom-master/dist/xzoom.min.css) -->
-  <link rel="stylesheet" type="text/css" href="xZoom-master/dist/xzoom.min.css" media="all" />
+  <!-- xZoom CSS: đúng đường dẫn -->
+  <link rel="stylesheet" type="text/css"
+        href="xZoom-master/dist/xzoom.min.css" media="all" />
 
   <style>
     body {
@@ -32,12 +33,15 @@
     .description { margin-top: 10px; }
     .well { margin-top: 20px; }
 
-    /* cho ảnh xzoom đẹp hơn chút */
+    .xzoom-container { margin-bottom: 10px; }
     .xzoom {
       width: 100%;
       max-height: 420px;
       object-fit: cover;
       border-radius: 6px;
+    }
+    .xzoom-gallery {
+      border-radius: 4px;
     }
   </style>
 </head>
@@ -116,7 +120,8 @@
 
               <div class="form-group" style="margin-top:10px;">
                 <label>Nội dung ghi trên bánh</label>
-                <input type="text" class="form-control" placeholder="VD: Happy Birthday Linh" />
+                <input type="text" class="form-control"
+                       placeholder="VD: Happy Birthday Linh" />
               </div>
 
               <div class="form-group" style="margin-top:15px;">
@@ -167,7 +172,7 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 
-<!-- xZoom JS: đúng đường dẫn theo ảnh (xZoom-master/dist/xzoom.min.js) -->
+<!-- xZoom JS: đúng đường dẫn -->
 <script src="xZoom-master/dist/xzoom.min.js"></script>
 <script>
   $(document).ready(function () {
