@@ -1,360 +1,433 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tiệm Bánh Ngọt Online</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tiệm Bánh Ngọt Online</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
 
-  <!-- Optional theme -->
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
 
-  <style>
-    /* Cho đẹp hơn một chút */
-    body {
-      padding-bottom: 40px;
-    }
-    .navbar-brand img {
-      max-height: 30px;
-    }
-    .thumbnail {
-      position: relative;
-      overflow: hidden;
-    }
-    .add-to-cart {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 20px;
-    }
-    .add-to-cart a {
-      color: #f0ad4e;
-      text-shadow: 0 0 3px rgba(0,0,0,0.3);
-    }
-    .ratings span {
-      color: #f0ad4e;
-    }
-    #bakery-carousel .item img {
-    height: 350px;
-    width: 100%;
-    object-fit: cover;
-    }
-  </style>
-</head>
-<body>
+    <style>
+      /* Cho đẹp hơn một chút */
+      body {
+        padding-bottom: 40px;
+      }
+      .navbar-brand img {
+        max-height: 30px;
+      }
+      .thumbnail {
+        position: relative;
+        overflow: hidden;
+      }
+      .add-to-cart {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+      }
+      .add-to-cart a {
+        color: #f0ad4e;
+        text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+      }
+      .ratings span {
+        color: #f0ad4e;
+      }
+      #bakery-carousel .item img {
+        width: 100%;
+        height: 450px; /* chiều cao hợp lý */
+        object-fit: cover; /* cắt gọn đẹp, không méo ảnh */
+        object-position: center; /* canh giữa */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR TIỆM BÁNH -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar-bakery"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
 
-<!-- NAVBAR TIỆM BÁNH -->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+          <!-- Logo tiệm bánh -->
+          <a class="navbar-brand" href="#">
+            <img src="img/logo.png" alt="Tiệm Bánh Ngọt" height="50" />
+          </a>
+        </div>
 
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button
-        type="button"
-        class="navbar-toggle collapsed"
-        data-toggle="collapse"
-        data-target="#navbar-bakery"
-        aria-expanded="false"
+        <!-- Menu + search + icon bên phải -->
+        <div class="collapse navbar-collapse" id="navbar-bakery">
+          <!-- Menu trái -->
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="#">Trang chủ <span class="sr-only">(current)</span></a>
+            </li>
+            <li><a href="#menu-banh">Menu bánh</a></li>
+            <li><a href="#khuyen-mai">Khuyến mãi</a></li>
+            <li><a href="#lien-he">Liên hệ</a></li>
+
+            <!-- Dropdown danh mục -->
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Danh mục <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#menu-banh">Bánh Kem</a></li>
+                <li><a href="#menu-banh">Cupcake</a></li>
+                <li><a href="#menu-banh">Bánh Cheesecake</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#menu-banh">Thiết kế theo yêu cầu</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Search DESKTOP (ẩn trên mobile) -->
+          <form class="navbar-form navbar-left hidden-xs">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Tìm bánh..."
+              />
+            </div>
+            <button type="submit" class="btn btn-default">Tìm</button>
+          </form>
+
+          <!-- Menu phải: giỏ hàng + tài khoản + đăng nhập -->
+          <ul class="nav navbar-nav navbar-right">
+            <!-- Giỏ hàng -->
+            <li>
+              <a href="#">
+                <span class="badge pull-right">4</span>
+                <i class="glyphicon glyphicon-shopping-cart"></i>
+              </a>
+            </li>
+            <!-- Tài khoản -->
+            <li>
+              <a href="account.html">
+                <i class="glyphicon glyphicon-user"></i>
+              </a>
+            </li>
+            <!-- Đăng nhập (mở modal) -->
+            <li>
+              <a href="#" data-toggle="modal" data-target="#myModal"
+                >Đăng nhập</a
+              >
+            </li>
+          </ul>
+
+          <!-- Search MOBILE (chỉ hiện ở màn hình nhỏ) -->
+          <form class="visible-xs-inline-block" style="margin-top: 10px">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Tìm bánh..."
+              />
+            </div>
+          </form>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+
+    <!-- CAROUSEL TIỆM BÁNH -->
+    <div id="bakery-carousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li
+          data-target="#bakery-carousel"
+          data-slide-to="0"
+          class="active"
+        ></li>
+        <li data-target="#bakery-carousel" data-slide-to="1"></li>
+        <li data-target="#bakery-carousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide 1 -->
+        <div class="item active">
+          <img src="img/dautay.jpg" alt="Cheesecake dâu" />
+          <div class="carousel-caption">
+            <h3>Cheesecake Dâu Tươi</h3>
+            <p>Béo mịn, chua nhẹ, giảm 20% hôm nay!</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="item">
+          <img src="img/cc.jpg" alt="Cupcake nhiều vị" />
+          <div class="carousel-caption">
+            <h3>Set Cupcake Nhiều Vị</h3>
+            <p>Mua 2 set tặng 1 phần mini.</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="item">
+          <img src="img/snhat.jpg" alt="Bánh kem sinh nhật" />
+          <div class="carousel-caption">
+            <h3>Bánh Kem Sinh Nhật</h3>
+            <p>Nhận thiết kế theo yêu cầu, giao trong ngày.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a
+        class="left carousel-control"
+        href="#bakery-carousel"
+        role="button"
+        data-slide="prev"
       >
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <!-- Logo tiệm bánh -->
-      <a class="navbar-brand" href="#">
-        <img src="img/logo.png"
-             alt="Tiệm Bánh Ngọt"
-             height="50">
+        <span
+          class="glyphicon glyphicon-chevron-left"
+          aria-hidden="true"
+        ></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="right carousel-control"
+        href="#bakery-carousel"
+        role="button"
+        data-slide="next"
+      >
+        <span
+          class="glyphicon glyphicon-chevron-right"
+          aria-hidden="true"
+        ></span>
+        <span class="sr-only">Next</span>
       </a>
     </div>
 
-    <!-- Menu + search + icon bên phải -->
-    <div class="collapse navbar-collapse" id="navbar-bakery">
-      <!-- Menu trái -->
-      <ul class="nav navbar-nav">
-        <li class="active">
-          <a href="#">Trang chủ <span class="sr-only">(current)</span></a>
-        </li>
-        <li><a href="#menu-banh">Menu bánh</a></li>
-        <li><a href="#khuyen-mai">Khuyến mãi</a></li>
-        <li><a href="#lien-he">Liên hệ</a></li>
-
-        <!-- Dropdown danh mục -->
-        <li class="dropdown">
-          <a
-            href="#"
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Danh mục <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="#menu-banh">Bánh Kem</a></li>
-            <li><a href="#menu-banh">Cupcake</a></li>
-            <li><a href="#menu-banh">Bánh Cheesecake</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#menu-banh">Thiết kế theo yêu cầu</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      <!-- Search DESKTOP (ẩn trên mobile) -->
-      <form class="navbar-form navbar-left hidden-xs">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Tìm bánh...">
-        </div>
-        <button type="submit" class="btn btn-default">Tìm</button>
-      </form>
-
-      <!-- Menu phải: giỏ hàng + tài khoản + đăng nhập -->
-      <ul class="nav navbar-nav navbar-right">
-        <!-- Giỏ hàng -->
-        <li>
-          <a href="#">
-            <span class="badge pull-right">4</span>
-            <i class="glyphicon glyphicon-shopping-cart"></i>
-          </a>
-        </li>
-        <!-- Tài khoản -->
-        <li>
-          <a href="account.html">
-            <i class="glyphicon glyphicon-user"></i>
-          </a>
-        </li>
-        <!-- Đăng nhập (mở modal) -->
-        <li>
-          <a href="#" data-toggle="modal" data-target="#myModal">Đăng nhập</a>
-        </li>
-      </ul>
-
-      <!-- Search MOBILE (chỉ hiện ở màn hình nhỏ) -->
-      <form class="visible-xs-inline-block" style="margin-top:10px">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Tìm bánh...">
-        </div>
-      </form>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-<!-- CAROUSEL TIỆM BÁNH -->
-<div id="bakery-carousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#bakery-carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#bakery-carousel" data-slide-to="1"></li>
-    <li data-target="#bakery-carousel" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <!-- Slide 1 -->
-    <div class="item active">
-      <img src="img/dautay.jpg" alt="Cheesecake dâu">
-      <div class="carousel-caption">
-        <h3>Cheesecake Dâu Tươi</h3>
-        <p>Béo mịn, chua nhẹ, giảm 20% hôm nay!</p>
-      </div>
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="item">
-      <img src="img/cc.jpg" alt="Cupcake nhiều vị">
-      <div class="carousel-caption">
-        <h3>Set Cupcake Nhiều Vị</h3>
-        <p>Mua 2 set tặng 1 phần mini.</p>
-      </div>
-    </div>
-
-    <!-- Slide 3 -->
-    <div class="item">
-      <img src="img/snhat.jpg" alt="Bánh kem sinh nhật">
-      <div class="carousel-caption">
-        <h3>Bánh Kem Sinh Nhật</h3>
-        <p>Nhận thiết kế theo yêu cầu, giao trong ngày.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#bakery-carousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#bakery-carousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-<!-- PHẦN MENU BÁNH + SẢN PHẨM -->
-<div class="container" id="menu-banh" style="margin-top:30px;">
-  <div class="row">
-    <!-- Cột trái: Categories -->
-    <div class="col-sm-4 col-md-3">
-      <h3>Danh mục</h3>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <span class="badge">8</span>
-          Bánh Kem
-        </li>
-        <li class="list-group-item">
-          <span class="badge">5</span>
-          Cupcake
-        </li>
-        <li class="list-group-item">
-          <span class="badge">3</span>
-          Cheesecake
-      </ul>
-    </div>
-
-    <!-- Cột phải: Products -->
-    <div class="col-sm-8 col-md-9">
-      <h3>Sản phẩm nổi bật</h3>
+    <!-- PHẦN MENU BÁNH + SẢN PHẨM -->
+    <div class="container" id="menu-banh" style="margin-top: 30px">
       <div class="row">
+        <!-- Cột trái: Categories -->
+        <div class="col-sm-4 col-md-3">
+          <h3>Danh mục</h3>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="badge">8</span>
+              Bánh Kem
+            </li>
+            <li class="list-group-item">
+              <span class="badge">5</span>
+              Cupcake
+            </li>
+            <li class="list-group-item">
+              <span class="badge">3</span>
+              Cheesecake
+            </li>
+          </ul>
+        </div>
 
-        <!-- Product 1 -->
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="img/dautay.jpg" alt="Cheesecake dâu">
-            <div class="add-to-cart">
-              <a href="#" class="glyphicon glyphicon-plus-sign"
-                 data-toggle="tooltip" data-placement="top" title="Thêm vào giỏ"></a>
+        <!-- Cột phải: Products -->
+        <div class="col-sm-8 col-md-9">
+          <h3>Sản phẩm nổi bật</h3>
+          <div class="row">
+            <!-- Product 1 -->
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <img src="img/dautay.jpg" alt="Cheesecake dâu" />
+                <div class="add-to-cart">
+                  <a
+                    href="#"
+                    class="glyphicon glyphicon-plus-sign"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Thêm vào giỏ"
+                  ></a>
+                </div>
+                <div class="caption">
+                  <h4 class="pull-right">180.000đ</h4>
+                  <h4>
+                    <a href="detaildt.html">Cheesecake Dâu Tươi</a>
+                  </h4>
+                  <p>Bánh phô mai béo mịn, kết hợp dâu tươi chua nhẹ.</p>
+                  <div class="ratings">
+                    <p class="pull-right">
+                      <a href="product.html#comments">15 đánh giá</a>
+                    </p>
+                    <p>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="caption">
-              <h4 class="pull-right">180.000đ</h4>
-              <h4>
-                 <a href="detaildt.html">Cheesecake Dâu Tươi</a>
-              </h4>
-              <p>Bánh phô mai béo mịn, kết hợp dâu tươi chua nhẹ.</p>
-              <div class="ratings">
-                <p class="pull-right">
-                  <a href="product.html#comments">15 đánh giá</a>
-                </p>
-                <p>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                </p>
+
+            <!-- Product 2 -->
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <img src="img/cc.jpg" alt="Set cupcake" />
+                <div class="add-to-cart">
+                  <a
+                    href="#"
+                    class="glyphicon glyphicon-plus-sign"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Thêm vào giỏ"
+                  ></a>
+                </div>
+                <div class="caption">
+                  <h4 class="pull-right">150.000đ</h4>
+                  <h4>
+                    <a href="detailcc.html">Set 6 Cupcake Nhiều Vị</a>
+                  </h4>
+                  <p>Vani, socola, matcha, dâu... phù hợp cho tiệc nhỏ.</p>
+                  <div class="ratings">
+                    <p class="pull-right">
+                      <a href="product.html#comments">10 đánh giá</a>
+                    </p>
+                    <p>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star-empty"></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <img src="img/snhat.jpg" alt="Bánh kem sinh nhật" />
+                <div class="add-to-cart">
+                  <a
+                    href="#"
+                    class="glyphicon glyphicon-plus-sign"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Thêm vào giỏ"
+                  ></a>
+                </div>
+                <div class="caption">
+                  <h4 class="pull-right">250.000đ</h4>
+                  <h4>
+                    <a href="detailsn.html">Bánh Kem Sinh Nhật</a>
+                  </h4>
+                  <p>
+                    Thiết kế theo yêu cầu, ghi tên miễn phí, giao trong ngày.
+                  </p>
+                  <div class="ratings">
+                    <p class="pull-right">
+                      <a href="product.html#comments">20 đánh giá</a>
+                    </p>
+                    <p>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star-empty"></span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <!-- /.row -->
         </div>
-
-        <!-- Product 2 -->
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="img/cc.jpg" alt="Set cupcake">
-            <div class="add-to-cart">
-              <a href="#" class="glyphicon glyphicon-plus-sign"
-                 data-toggle="tooltip" data-placement="top" title="Thêm vào giỏ"></a>
-            </div>
-            <div class="caption">
-              <h4 class="pull-right">150.000đ</h4>
-              <h4>
-                <a href="detailcc.html">Set 6 Cupcake Nhiều Vị</a>
-              </h4>
-              <p>Vani, socola, matcha, dâu... phù hợp cho tiệc nhỏ.</p>
-              <div class="ratings">
-                <p class="pull-right">
-                  <a href="product.html#comments">10 đánh giá</a>
-                </p>
-                <p>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star-empty"></span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="img/snhat.jpg" alt="Bánh kem sinh nhật">
-            <div class="add-to-cart">
-              <a href="#" class="glyphicon glyphicon-plus-sign"
-                 data-toggle="tooltip" data-placement="top" title="Thêm vào giỏ"></a>
-            </div>
-            <div class="caption">
-              <h4 class="pull-right">250.000đ</h4>
-              <h4>
-                 <a href="detailsn.html">Bánh Kem Sinh Nhật</a>
-              </h4>
-              <p>Thiết kế theo yêu cầu, ghi tên miễn phí, giao trong ngày.</p>
-              <div class="ratings">
-                <p class="pull-right">
-                  <a href="product.html#comments">20 đánh giá</a>
-                </p>
-                <p>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star-empty"></span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /.row -->
-    </div><!-- /.col-sm-8 col-md-9 -->
-  </div><!-- /.row -->
-</div><!-- /.container -->
-
-<!-- MODAL ĐĂNG NHẬP (tối giản, để nút Đăng nhập hoạt động) -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title" id="loginModalLabel">Đăng nhập</h4>
+        <!-- /.col-sm-8 col-md-9 -->
       </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" class="form-control" placeholder="Nhập email">
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+    <!-- MODAL ĐĂNG NHẬP (tối giản, để nút Đăng nhập hoạt động) -->
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="loginModalLabel"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="loginModalLabel">Đăng nhập</h4>
           </div>
-          <div class="form-group">
-            <label>Mật khẩu</label>
-            <input type="password" class="form-control" placeholder="Nhập mật khẩu">
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Nhập email"
+                />
+              </div>
+              <div class="form-group">
+                <label>Mật khẩu</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Nhập mật khẩu"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Đăng nhập</button>
+            </form>
           </div>
-          <button type="submit" class="btn btn-primary">Đăng nhập</button>
-        </form>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-
-</body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
