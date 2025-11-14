@@ -43,8 +43,10 @@
     .ratings span {
       color: #f0ad4e;
     }
-    #bakery-carousel img {
-      width: 100%;
+    #bakery-carousel .item img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
     }
   </style>
 </head>
@@ -71,10 +73,9 @@
 
       <!-- Logo tiệm bánh -->
       <a class="navbar-brand" href="#">
-        <!-- nhớ tạo file img/logo.png hoặc đổi đường dẫn -->
         <img src="img/logo.png"
              alt="Tiệm Bánh Ngọt"
-             height="30">
+             height="50">
       </a>
     </div>
 
@@ -103,9 +104,8 @@
           </a>
           <ul class="dropdown-menu">
             <li><a href="#menu-banh">Bánh Kem</a></li>
-            <li><a href="#menu-banh">Tiramisu</a></li>
             <li><a href="#menu-banh">Cupcake</a></li>
-            <li><a href="#menu-banh">Bánh Mousse</a></li>
+            <li><a href="#menu-banh">Bánh Cheesecake</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#menu-banh">Thiết kế theo yêu cầu</a></li>
           </ul>
@@ -218,12 +218,11 @@
         </li>
         <li class="list-group-item">
           <span class="badge">3</span>
-          Tiramisu
+          Cheesecake
         </li>
         <li class="list-group-item">
           <span class="badge">4</span>
-          Bánh Mousse
-        </li>
+                </li>
       </ul>
     </div>
 
