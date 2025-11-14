@@ -18,8 +18,8 @@
         integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
 
-  <!-- xZoom CSS -->
-  <link rel="stylesheet" type="text/css" href="xzoom/xzoom.css" media="all"/>
+  <!-- xZoom CSS (đúng tên & đường dẫn: /xzoom/xzoom.min.css) -->
+  <link rel="stylesheet" type="text/css" href="xzoom/xzoom.min.css" media="all"/>
 
   <style>
     body {
@@ -31,8 +31,18 @@
     .ratings span { color: #f0ad4e; }
     .description { margin-top: 10px; }
     .well { margin-top: 20px; }
+
     .xzoom-container { margin-bottom: 10px; }
-    .xzoom-gallery img { margin-right: 8px; }
+    .xzoom {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .xzoom-gallery {
+      margin-right: 8px;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
@@ -69,6 +79,7 @@
                     src="img/dautay.jpg"
                     class="xzoom-gallery img-thumbnail img-responsive"
                     xpreview="img/dautay.jpg"
+                    xoriginal="img/dautay.jpg"
                     alt="Cheesecake Dâu Tươi">
                 </a>
               </div>
@@ -192,16 +203,15 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 
-<!-- xZoom JS -->
 <script src="xzoom/xzoom.min.js"></script>
 
 <script>
   $(document).ready(function () {
     $('.xzoom, .xzoom-gallery').xzoom({
-      position: 'right',     // khung zoom hiện bên phải
-      zoomWidth: 400,        // chiều rộng khung zoom
-      tint: '#333',          // màu overlay
-      Xoffset: 15,           // khoảng cách với hình chính
+      position: 'right',
+      zoomWidth: 400,
+      tint: '#333',
+      Xoffset: 15,
       title: false
     });
   });

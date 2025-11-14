@@ -7,38 +7,19 @@
   <title>Chi tiết sản phẩm - Set 6 Cupcake Nhiều Vị</title>
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- xZoom CSS -->
-  <link rel="stylesheet" type="text/css" href="xzoom/xzoom.css" media="all"/>
+  <!-- xZoom CSS (đúng đường dẫn) -->
+  <link rel="stylesheet" type="text/css" href="xzoom/xzoom.min.css" media="all"/>
 
   <style>
-    body {
-      padding-top: 20px;
-      padding-bottom: 40px;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-    }
-    .xzoom-container {
-      margin-bottom: 10px;
-    }
-    .xzoom {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-    .xzoom-gallery {
-      width: 75px;
-      height: 75px;
-      object-fit: cover;
-      margin-right: 10px;
-      border-radius: 6px;
-    }
+    body { padding-top: 20px; padding-bottom: 40px; font-family: "Helvetica Neue", Arial, sans-serif; }
+    .xzoom-container { margin-bottom: 10px; }
+    .xzoom { width: 100%; max-height: 450px; object-fit: cover; border-radius: 6px; }
+    .xzoom-gallery { width: 75px; height: 75px; object-fit: cover; border-radius: 6px; margin-right: 10px; }
     .ratings span { color: #f0ad4e; }
     .description { margin-top: 12px; }
   </style>
-
 </head>
 <body>
 
@@ -62,8 +43,10 @@
 
           <div class="row">
             <div class="col-xs-3">
-              <img class="xzoom-gallery" src="img/cc.jpg" xpreview="img/cc.jpg" xoriginal="img/cc.jpg">
-            
+              <img class="xzoom-gallery"
+                   src="img/cc.jpg"
+                   xpreview="img/cc.jpg"
+                   xoriginal="img/cc.jpg">
             </div>
           </div>
         </div>
@@ -72,12 +55,9 @@
         <div class="col-sm-6">
           <h4 class="pull-right">150.000đ</h4>
           <h4>Set 6 Cupcake Nhiều Vị</h4>
-          <p>
-            Combo 6 cupcake với nhiều hương vị: vani, socola, matcha, dâu…
-            Trang trí kem bơ mềm mịn, màu sắc dễ thương, phù hợp cho tiệc nhỏ hoặc làm quà tặng.
-          </p>
+          <p>Combo 6 cupcake thơm ngon nhiều vị: vani, socola, matcha, dâu…</p>
 
-          <form role="form">
+          <form>
             <div class="form-group">
               <label>Số lượng set</label>
               <input type="number" class="form-control" value="1" min="1">
@@ -98,33 +78,10 @@
 
           <div class="ratings" style="margin-top:10px;">
             <p class="pull-right">10 đánh giá</p>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span> 4.0 sao
+            ⭐⭐⭐⭐☆
           </div>
+
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- JS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<!-- xZoom Script -->
-<script type="text/javascript" src="xzoom/xzoom.js"></script>
-<script>
-  $(document).ready(function () {
-    $(".xzoom, .xzoom-gallery").xzoom({
-      zoomWidth: 400,
-      tint: "#333",
-      Xoffset: 15
-    });
-  });
-</script>
-
-</body>
-</html>
