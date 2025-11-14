@@ -10,44 +10,33 @@
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- xZoom CSS: đúng thư mục em đang dùng -->
+  <!-- xZoom CSS - dùng CDN cho chắc chắn -->
   <link rel="stylesheet" type="text/css"
-        href="xZoom-master/dist/xzoom.min.css" media="all">
+        href="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.min.css" media="all">
 
   <style>
-    body{
+    body {
       padding-top: 20px;
       padding-bottom: 40px;
       font-family: "Helvetica Neue", Arial, sans-serif;
     }
-
-    /* Khung ảnh chính */
-    .xzoom-container{
-      border: 1px solid #eee;
-      padding: 10px;
-      background:#fafafa;
-      display: inline-block;
-    }
-
-    .xzoom{
+    .xzoom-container { margin-bottom: 10px; }
+    .xzoom {
       width: 100%;
-      max-width: 400px;     /* ảnh hiển thị khoảng 400px */
-      height: auto;
+      max-height: 450px;
+      object-fit: cover;
       border-radius: 6px;
     }
-
-    /* Thumbnail */
-    .xzoom-gallery{
-      width: 80px;
-      height: 80px;
+    .xzoom-gallery {
+      width: 75px;
+      height: 75px;
       object-fit: cover;
-      border-radius: 4px;
-      margin-top: 10px;
-      margin-right: 8px;
-      cursor: pointer;
+      border-radius: 6px;
+      margin-right: 10px;
+      margin-top: 5px;
     }
-
-    .ratings span{ color:#f0ad4e; }
+    .ratings span { color: #f0ad4e; }
+    .description { margin-top: 12px; }
   </style>
 </head>
 <body>
@@ -57,77 +46,82 @@
   <hr>
 
   <div class="row">
-    <!-- Cột ảnh + zoom -->
-    <div class="col-sm-6">
-      <div class="xzoom-container">
-        <!-- Ảnh hiển thị nhỏ: cc-small.jpg
-             Ảnh gốc để zoom: cc-large.jpg -->
-        <img class="xzoom img-responsive"
-             id="xzoom-default"
-             src="img/cc-small.jpg"
-             xoriginal="img/cc-large.jpg"
-             alt="Set 6 Cupcake Nhiều Vị">
-      </div>
+    <div class="col-sm-8 col-md-9">
+      <div class="row">
 
-      <!-- Thumbnail (có thể thêm nhiều ảnh khác) -->
-      <div>
-        <img class="xzoom-gallery"
-             src="img/cc-small.jpg"
-             xpreview="img/cc-small.jpg"
-             xoriginal="img/cc-large.jpg"
-             alt="Set 6 Cupcake Nhiều Vị">
-      </div>
-    </div>
+        <!-- CỘT ẢNH ZOOM -->
+        <div class="col-sm-6">
+          <div class="xzoom-container">
+            <!-- Ảnh chính -->
+            <img class="xzoom img-responsive"
+                 id="xzoom-default"
+                 src="img/cc.jpg"
+                 xoriginal="img/cc.jpg"
+                 alt="Set 6 Cupcake Nhiều Vị">
+          </div>
 
-    <!-- Cột mô tả -->
-    <div class="col-sm-6">
-      <h4 class="pull-right">150.000đ</h4>
-      <h4>Set 6 Cupcake Nhiều Vị</h4>
-      <p>Combo 6 cupcake thơm ngon nhiều vị: vani, socola, matcha, dâu…</p>
+          <!-- Thumbnail -->
+          <div class="xzoom-thumbs">
+            <a href="img/cc.jpg">
+              <img class="xzoom-gallery"
+                   src="img/cc.jpg"
+                   xpreview="img/cc.jpg"
+                   xoriginal="img/cc.jpg"
+                   alt="Set 6 Cupcake Nhiều Vị">
+            </a>
+          </div>
+        </div> <!-- /col-sm-6 ảnh -->
 
-      <form>
-        <div class="form-group">
-          <label>Số lượng set</label>
-          <input type="number" class="form-control" value="1" min="1">
-        </div>
+        <!-- CỘT MÔ TẢ -->
+        <div class="col-sm-6">
+          <h4 class="pull-right">150.000đ</h4>
+          <h4>Set 6 Cupcake Nhiều Vị</h4>
+          <p>Combo 6 cupcake thơm ngon nhiều vị: vani, socola, matcha, dâu…</p>
 
-        <div class="form-group">
-          <label>Hương vị chính</label>
-          <select class="form-control">
-            <option>Mix nhiều vị</option>
-            <option>Socola</option>
-            <option>Vani</option>
-            <option>Matcha</option>
-          </select>
-        </div>
+          <form>
+            <div class="form-group">
+              <label>Số lượng set</label>
+              <input type="number" class="form-control" value="1" min="1">
+            </div>
 
-        <button type="submit" class="btn btn-success">Thêm vào giỏ</button>
-      </form>
+            <div class="form-group">
+              <label>Hương vị chính</label>
+              <select class="form-control">
+                <option>Mix nhiều vị</option>
+                <option>Socola</option>
+                <option>Vani</option>
+                <option>Matcha</option>
+              </select>
+            </div>
 
-      <div class="ratings" style="margin-top:10px;">
-        <p class="pull-right">10 đánh giá</p>
-        ⭐⭐⭐⭐☆
-      </div>
-    </div>
-  </div>
-</div>
+            <button type="submit" class="btn btn-success">Thêm vào giỏ</button>
+          </form>
 
-<!-- jQuery -->
+          <div class="ratings" style="margin-top:10px;">
+            <p class="pull-right">10 đánh giá</p>
+            ⭐⭐⭐⭐☆
+          </div>
+        </div> <!-- /col-sm-6 mô tả -->
+
+      </div> <!-- /row -->
+    </div> <!-- /col-sm-8 col-md-9 -->
+  </div> <!-- /row -->
+</div> <!-- /container -->
+
+<!-- jQuery (bắt buộc trước xZoom) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- xZoom JS -->
-<script src="xZoom-master/dist/xzoom.min.js"></script>
+<!-- xZoom JS - dùng CDN -->
+<script src="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.min.js"></script>
 <script>
   $(document).ready(function () {
     $('.xzoom, .xzoom-gallery').xzoom({
-      position: 'right',    // khung zoom nằm bên phải
-      zoomWidth: 600,       // khung zoom to (giống demo xe)
-      zoomHeight: 600,
-      Xoffset: 20,
+      position: 'right',
+      zoomWidth: 500,
       tint: '#333',
-      lens: true            // có ô vuông trên ảnh
+      Xoffset: 15
     });
   });
 </script>
