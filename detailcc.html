@@ -10,8 +10,9 @@
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+  <!-- xZoom CSS - dùng CDN giống file Cheesecake -->
   <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.min.css" media="all">
+        href="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.css" media="all"/>
 
   <style>
     body {
@@ -19,23 +20,29 @@
       padding-bottom: 40px;
       font-family: "Helvetica Neue", Arial, sans-serif;
     }
-    .xzoom-container { margin-bottom: 10px; }
+    .thumbnail { border: none; box-shadow: none; }
+    .ratings span { color: #f0ad4e; }
+    .description { margin-top: 10px; }
+    .well { margin-top: 20px; }
+
+    /* PHẦN xzoom – giống file Cheesecake */
+    .xzoom-container {
+      margin-bottom: 10px;
+      max-width: 350px;  /* thu nhỏ ảnh gốc để zoom trông to hơn */
+    }
     .xzoom {
       width: 100%;
-      max-height: 450px;
+      max-height: 420px;
       object-fit: cover;
       border-radius: 6px;
     }
     .xzoom-gallery {
-      width: 75px;
-      height: 75px;
+      margin-right: 8px;
+      border-radius: 4px;
+      width: 80px;
+      height: 80px;
       object-fit: cover;
-      border-radius: 6px;
-      margin-right: 10px;
-      margin-top: 5px;
     }
-    .ratings span { color: #f0ad4e; }
-    .description { margin-top: 12px; }
   </style>
 </head>
 <body>
@@ -45,64 +52,70 @@
   <hr>
 
   <div class="row">
+    <!-- Khối chi tiết sản phẩm -->
     <div class="col-sm-8 col-md-9">
-      <div class="row">
+      <div class="thumbnail">
+        <div class="row">
 
-        <!-- CỘT ẢNH ZOOM -->
-        <div class="col-sm-6">
-          <div class="xzoom-container">
-            <!-- Ảnh chính -->
-            <img class="xzoom img-responsive"
-                 id="xzoom-default"
-                 src="img/cc.jpg"
-                 xoriginal="img/cc.jpg"
-                 alt="Set 6 Cupcake Nhiều Vị">
-          </div>
-
-          <!-- Thumbnail -->
-          <div class="xzoom-thumbs">
-            <a href="img/cc.jpg">
-              <img class="xzoom-gallery"
+          <!-- CỘT ẢNH ZOOM -->
+          <div class="col-sm-6">
+            <div class="xzoom-container">
+              <!-- Ảnh chính -->
+              <img class="xzoom img-responsive"
+                   id="xzoom-default"
                    src="img/cc.jpg"
-                   xpreview="img/cc.jpg"
                    xoriginal="img/cc.jpg"
                    alt="Set 6 Cupcake Nhiều Vị">
-            </a>
-          </div>
-        </div> <!-- /col-sm-6 ảnh -->
-
-        <!-- CỘT MÔ TẢ -->
-        <div class="col-sm-6">
-          <h4 class="pull-right">150.000đ</h4>
-          <h4>Set 6 Cupcake Nhiều Vị</h4>
-          <p>Combo 6 cupcake thơm ngon nhiều vị: vani, socola, matcha, dâu…</p>
-
-          <form>
-            <div class="form-group">
-              <label>Số lượng set</label>
-              <input type="number" class="form-control" value="1" min="1">
             </div>
 
-            <div class="form-group">
-              <label>Hương vị chính</label>
-              <select class="form-control">
-                <option>Mix nhiều vị</option>
-                <option>Socola</option>
-                <option>Vani</option>
-                <option>Matcha</option>
-              </select>
+            <!-- Thumbnail -->
+            <div class="xzoom-thumbs">
+              <a href="img/cc.jpg">
+                <img class="xzoom-gallery img-thumbnail img-responsive"
+                     src="img/cc.jpg"
+                     xpreview="img/cc.jpg"
+                     xoriginal="img/cc.jpg"
+                     alt="Set 6 Cupcake Nhiều Vị">
+              </a>
             </div>
+          </div> <!-- /col-sm-6 ảnh -->
 
-            <button type="submit" class="btn btn-success">Thêm vào giỏ</button>
-          </form>
+          <!-- CỘT MÔ TẢ -->
+          <div class="col-sm-6">
+            <h4 class="pull-right">150.000đ</h4>
+            <h4>Set 6 Cupcake Nhiều Vị</h4>
+            <p>
+              Combo 6 cupcake thơm ngon nhiều vị: vani, socola, matcha, dâu…
+              Phù hợp cho tiệc sinh nhật, họp mặt bạn bè hoặc làm quà tặng dễ thương.
+            </p>
 
-          <div class="ratings" style="margin-top:10px;">
-            <p class="pull-right">10 đánh giá</p>
-            ⭐⭐⭐⭐☆
-          </div>
-        </div> <!-- /col-sm-6 mô tả -->
+            <form>
+              <div class="form-group">
+                <label>Số lượng set</label>
+                <input type="number" class="form-control" value="1" min="1">
+              </div>
 
-      </div> <!-- /row -->
+              <div class="form-group">
+                <label>Hương vị chính</label>
+                <select class="form-control">
+                  <option>Mix nhiều vị</option>
+                  <option>Socola</option>
+                  <option>Vani</option>
+                  <option>Matcha</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-success">Thêm vào giỏ</button>
+            </form>
+
+            <div class="ratings" style="margin-top:10px;">
+              <p class="pull-right">10 đánh giá</p>
+              ⭐⭐⭐⭐☆
+            </div>
+          </div> <!-- /col-sm-6 mô tả -->
+
+        </div> <!-- /row -->
+      </div> <!-- /thumbnail -->
     </div> <!-- /col-sm-8 col-md-9 -->
   </div> <!-- /row -->
 </div> <!-- /container -->
@@ -112,15 +125,16 @@
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- xZoom JS - dùng CDN -->
+<!-- xZoom JS - dùng CDN giống file Cheesecake -->
 <script src="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.min.js"></script>
 <script>
   $(document).ready(function () {
     $('.xzoom, .xzoom-gallery').xzoom({
       position: 'right',
-      zoomWidth: 500,
+      zoomWidth: 600,   // cho to hơn một chút
       tint: '#333',
-      Xoffset: 15
+      Xoffset: 20,
+      title: false
     });
   });
 </script>
