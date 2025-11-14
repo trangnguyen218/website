@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chi tiết sản phẩm - Cheesecake Dâu Tươi</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+  <style>
+    body {
+      padding-top: 20px;
+      padding-bottom: 40px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+    .thumbnail {
+      position: relative;
+    }
+    .thumbnails img {
+      margin-bottom: 10px;
+    }
+    .ratings span {
+      color: #f0ad4e;
+    }
+    .description {
+      margin-top: 10px;
+    }
+    .well {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h2 class="text-center">Chi tiết sản phẩm</h2>
+  <hr>
+
+  <div class="row">
+    <!-- Khối chi tiết sản phẩm -->
+    <div class="col-sm-8 col-md-9">
+      <div class="thumbnail">
+        <div class="row">
+          <!-- Cột trái: Hình lớn + hình nhỏ -->
+          <div class="col-sm-6">
+            <!-- Hình lớn (bánh Cheesecake Dâu) -->
+            <img class="img-responsive" src="img/dautay.jpg"
+                 alt="Cheesecake Dâu Tươi" />
+
+            <!-- Các hình nhỏ (thumbnails) -->
+            <div class="thumbnails row" style="margin-top:10px;">
+              <div class="col-xs-3">
+                <a href="#">
+                  <img src="img/dautay.jpg"
+                       alt="Cheesecake Dâu Tươi"
+                       class="img-thumbnail img-responsive" />
+                </a>
+              </div>
+              <div class="col-xs-3">
+                <a href="#">
+                  <img src="img/dautay2.jpg"
+                       alt="Cheesecake góc khác"
+                       class="img-thumbnail img-responsive" />
+                </a>
+              </div>
+              <div class="col-xs-3">
+                <a href="#">
+                  <img src="img/dautay3.jpg"
+                       alt="Cheesecake cắt lát"
+                       class="img-thumbnail img-responsive" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cột phải: Mô tả + form đặt bánh -->
+          <div class="col-sm-6">
+            <!-- Description -->
+            <h4 class="pull-right">180.000đ</h4>
+            <h4>Cheesecake Dâu Tươi</h4>
+            <p>
+              Bánh phô mai béo mịn kết hợp dâu tươi chua nhẹ, phù hợp cho tiệc sinh nhật,
+              họp mặt bạn bè hoặc làm quà tặng ngọt ngào. Lớp đế bánh giòn nhẹ, 
+              phần cheesecake mềm mịn và topping dâu tươi trang trí bắt mắt.
+            </p>
+
+            <!-- Form đặt bánh -->
+            <form role="form">
+              <div class="number form-group">
+                <label>Số lượng</label>
+                <input type="number" class="input-sm form-control" id="number" value="1" min="1" />
+              </div>
+
+              <div class="form-group">
+                <label>Kích cỡ bánh</label>
+                <select id="size" class="form-control">
+                  <option value="16cm">16 cm (4–6 người)</option>
+                  <option value="20cm">20 cm (6–8 người)</option>
+                  <option value="24cm">24 cm (8–10 người)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Topping thêm</label>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">Dâu thêm</button>
+                  <button type="button" class="btn btn-default">Socola chip</button>
+                  <button type="button" class="btn btn-default">Việt quất</button>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-top:15px;">
+                <button type="submit" class="btn btn-default">Liên hệ tiệm</button>
+                <button type="submit" class="btn btn-success">Thêm vào giỏ</button>
+              </div>
+            </form>
+
+            <!-- Mô tả thêm -->
+            <div class="description">
+              <p>
+                Gợi ý: nên bảo quản trong ngăn mát tủ lạnh và dùng trong vòng 24 giờ
+                để giữ trọn hương vị tươi ngon. Vui lòng đặt trước ít nhất 4 giờ
+                để tiệm chuẩn bị tốt nhất cho đơn hàng của bạn.
+              </p>
+            </div>
+
+            <!-- Ratings -->
+            <div class="ratings">
+              <p class="pull-right">3 đánh giá</p>
+              <p>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                4.0 sao
+              </p>
+            </div>
+
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row -->
+      </div><!-- /.thumbnail -->
+
+      <!-- Khối review tổng + nút Viết đánh giá -->
+      <div class="well">
+        <div class="text-right">
+          <a class="btn btn-success">Viết đánh giá</a>
+        </div>
+      </div>
+
+      <!-- Comments mẫu -->
+      <div class="row">
+        <div class="col-md-12">
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star-empty"></span>
+          <strong>Lan Anh</strong>
+          <span class="pull-right">1 ngày trước</span>
+          <p>Từ <em>TP. Hồ Chí Minh</em></p>
+          <p>
+            Bánh rất ngon, vị dâu tươi rõ, không quá ngọt. Mình đặt sinh nhật cho em gái,
+            cả nhà đều khen. Sẽ ủng hộ tiếp!
+          </p>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:15px;">
+        <div class="col-md-12">
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star-empty"></span>
+          <span class="glyphicon glyphicon-star-empty"></span>
+          <strong>Minh Khoa</strong>
+          <span class="pull-right">3 ngày trước</span>
+          <p>Từ <em>Bình Dương</em></p>
+          <p>
+            Cheesecake ổn, giao hàng đúng giờ. Mình thích vị chua mạnh hơn một chút,
+            nhưng tổng thể vẫn rất ổn so với giá.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /.col-sm-8 col-md-9 -->
+  </div><!-- /.row -->
+</div><!-- /.container -->
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

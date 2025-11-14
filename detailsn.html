@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chi tiết sản phẩm - Bánh Kem Sinh Nhật</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+  <style>
+    body {
+      padding-top: 20px;
+      padding-bottom: 40px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+    .thumbnail { position: relative; }
+    .thumbnails img { margin-bottom: 10px; }
+    .ratings span { color: #f0ad4e; }
+    .description { margin-top: 10px; }
+    .well { margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h2 class="text-center">Chi tiết sản phẩm</h2>
+  <hr>
+
+  <div class="row">
+    <div class="col-sm-8 col-md-9">
+      <div class="thumbnail">
+        <div class="row">
+          <!-- Hình bánh kem -->
+          <div class="col-sm-6">
+            <img class="img-responsive" src="img/snhat.jpg"
+                 alt="Bánh Kem Sinh Nhật" />
+
+            <div class="thumbnails row" style="margin-top:10px;">
+              <div class="col-xs-3">
+                <a href="#">
+                  <img src="img/snhat.jpg"
+                       alt="Bánh kem sinh nhật"
+                       class="img-thumbnail img-responsive" />
+                </a>
+              </div>
+              <div class="col-xs-3">
+                <a href="#">
+                  <img src="img/snhat2.jpg"
+                       alt="Trang trí bánh kem"
+                       class="img-thumbnail img-responsive" />
+                </a>
+              </div>
+              <div class="col-xs-3">
+                <a href="#">
+                  <img src="img/snhat3.jpg"
+                       alt="Chi tiết bánh"
+                       class="img-thumbnail img-responsive" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mô tả + form -->
+          <div class="col-sm-6">
+            <h4 class="pull-right">250.000đ</h4>
+            <h4>Bánh Kem Sinh Nhật (Thiết kế theo yêu cầu)</h4>
+            <p>
+              Bánh kem sinh nhật với cốt bánh mềm, lớp kem tươi hoặc kem bơ tuỳ chọn, 
+              trang trí theo chủ đề bạn yêu thích (dễ thương, thanh lịch, tuổi teen, người lớn...).
+              Có thể ghi tên, tuổi và lời chúc miễn phí.
+            </p>
+
+            <form role="form">
+              <div class="number form-group">
+                <label>Kích cỡ bánh</label>
+                <select id="size" class="form-control">
+                  <option value="16cm">16 cm (4–6 người)</option>
+                  <option value="20cm">20 cm (6–8 người)</option>
+                  <option value="24cm">24 cm (8–10 người)</option>
+                  <option value="28cm">28 cm (10–12 người)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Hương vị cốt bánh</label>
+                <select id="flavor" class="form-control">
+                  <option value="vanilla">Vani</option>
+                  <option value="chocolate">Socola</option>
+                  <option value="green-tea">Trà xanh</option>
+                  <option value="red-velvet">Red Velvet</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Chủ đề trang trí</label>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">Dễ thương</button>
+                  <button type="button" class="btn btn-default">Thanh lịch</button>
+                  <button type="button" class="btn btn-default">Cho bé</button>
+                  <button type="button" class="btn btn-default">Người lớn</button>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-top:10px;">
+                <label>Nội dung ghi trên bánh</label>
+                <input type="text" class="form-control" placeholder="VD: Happy Birthday Linh" />
+              </div>
+
+              <div class="form-group" style="margin-top:15px;">
+                <button type="submit" class="btn btn-default">Liên hệ tiệm</button>
+                <button type="submit" class="btn btn-success">Thêm vào giỏ</button>
+              </div>
+            </form>
+
+            <div class="description">
+              <p>
+                Vui lòng đặt trước ít nhất 6–8 giờ để tiệm có thời gian lên ý tưởng và trang trí.
+                Bánh nên được bảo quản ở ngăn mát và dùng trong vòng 24 giờ.
+              </p>
+            </div>
+
+            <div class="ratings">
+              <p class="pull-right">20 đánh giá</p>
+              <p>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-half"></span>
+                4.5 sao
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Review -->
+      <div class="well">
+        <div class="text-right">
+          <a class="btn btn-success">Viết đánh giá</a>
+        </div>
+      </div>
+
+      <!-- Comments -->
+      <div class="row">
+        <div class="col-md-12">
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star-half"></span>
+          <strong>Ngọc Trâm</strong>
+          <span class="pull-right">1 tuần trước</span>
+          <p>Từ <em>TP. Hồ Chí Minh</em></p>
+          <p>
+            Đặt bánh sinh nhật cho mẹ, tiệm trang trí rất tinh tế, chữ đẹp, bánh không quá ngọt.
+            Gia đình ai cũng thích, cảm ơn tiệm nhiều!
+          </p>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:15px;">
+        <div class="col-md-12">
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star-empty"></span>
+          <span class="glyphicon glyphicon-star-empty"></span>
+          <strong>Quang Huy</strong>
+          <span class="pull-right">2 tuần trước</span>
+          <p>Từ <em>Long An</em></p>
+          <p>
+            Bánh đẹp, giao đúng giờ nhưng phần kem hơi ngọt so với khẩu vị nhà mình.
+            Nếu giảm ngọt chút thì sẽ hoàn hảo.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
