@@ -10,9 +10,12 @@
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- xZoom CSS - dùng CDN giống file Cheesecake -->
-  <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.css" media="all"/>
+  <!-- Optional theme (không bắt buộc) -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+  <!-- xZoom CSS: ĐÚNG ĐƯỜNG DẪN (giống file Cheesecake) -->
+  <link rel="stylesheet" type="text/css" href="xZoom-master/dist/xzoom.min.css" media="all"/>
 
   <style>
     body {
@@ -25,11 +28,7 @@
     .description { margin-top: 10px; }
     .well { margin-top: 20px; }
 
-    /* PHẦN xzoom – giống file Cheesecake */
-    .xzoom-container {
-      margin-bottom: 10px;
-      max-width: 350px;  /* thu nhỏ ảnh gốc để zoom trông to hơn */
-    }
+    .xzoom-container { margin-bottom: 10px; }
     .xzoom {
       width: 100%;
       max-height: 420px;
@@ -48,6 +47,7 @@
 <body>
 
 <div class="container">
+
   <h2 class="text-center">Chi tiết sản phẩm</h2>
   <hr>
 
@@ -57,30 +57,33 @@
       <div class="thumbnail">
         <div class="row">
 
-          <!-- CỘT ẢNH ZOOM -->
+          <!-- Cột trái: Ảnh + thumbnails dùng xZoom -->
           <div class="col-sm-6">
+
+            <!-- Ảnh lớn -->
             <div class="xzoom-container">
-              <!-- Ảnh chính -->
-              <img class="xzoom img-responsive"
-                   id="xzoom-default"
-                   src="img/cc.jpg"
-                   xoriginal="img/cc.jpg"
-                   alt="Set 6 Cupcake Nhiều Vị">
+              <img
+                class="xzoom img-responsive"
+                id="xzoom-default"
+                src="img/cc.jpg"
+                xoriginal="img/cc.jpg"
+                alt="Set 6 Cupcake Nhiều Vị">
             </div>
 
-            <!-- Thumbnail -->
-            <div class="xzoom-thumbs">
-              <a href="img/cc.jpg">
-                <img class="xzoom-gallery img-thumbnail img-responsive"
-                     src="img/cc.jpg"
-                     xpreview="img/cc.jpg"
-                     xoriginal="img/cc.jpg"
-                     alt="Set 6 Cupcake Nhiều Vị">
-              </a>
+            <!-- Ảnh nhỏ chọn lựa -->
+            <div class="thumbnails row">
+              <div class="col-xs-3">
+                <img
+                  src="img/cc.jpg"
+                  class="xzoom-gallery img-thumbnail img-responsive"
+                  xpreview="img/cc.jpg"
+                  xoriginal="img/cc.jpg"
+                  alt="Set 6 Cupcake Nhiều Vị">
+              </div>
             </div>
-          </div> <!-- /col-sm-6 ảnh -->
+          </div>
 
-          <!-- CỘT MÔ TẢ -->
+          <!-- Cột phải: Mô tả + form đặt bánh -->
           <div class="col-sm-6">
             <h4 class="pull-right">150.000đ</h4>
             <h4>Set 6 Cupcake Nhiều Vị</h4>
@@ -89,10 +92,10 @@
               Phù hợp cho tiệc sinh nhật, họp mặt bạn bè hoặc làm quà tặng dễ thương.
             </p>
 
-            <form>
-              <div class="form-group">
+            <form role="form">
+              <div class="number form-group">
                 <label>Số lượng set</label>
-                <input type="number" class="form-control" value="1" min="1">
+                <input type="number" class="input-sm form-control" value="1" min="1"/>
               </div>
 
               <div class="form-group">
@@ -105,36 +108,62 @@
                 </select>
               </div>
 
-              <button type="submit" class="btn btn-success">Thêm vào giỏ</button>
+              <div class="form-group" style="margin-top:15px;">
+                <button type="submit" class="btn btn-default">Liên hệ tiệm</button>
+                <button type="submit" class="btn btn-success">Thêm vào giỏ</button>
+              </div>
             </form>
 
-            <div class="ratings" style="margin-top:10px;">
-              <p class="pull-right">10 đánh giá</p>
-              ⭐⭐⭐⭐☆
+            <div class="description">
+              <p>
+                Gợi ý: nên dùng trong ngày để giữ độ mềm và độ ẩm bánh ngon nhất.
+                Có thể bảo quản trong ngăn mát tủ lạnh nếu chưa dùng ngay.
+              </p>
             </div>
-          </div> <!-- /col-sm-6 mô tả -->
 
-        </div> <!-- /row -->
-      </div> <!-- /thumbnail -->
-    </div> <!-- /col-sm-8 col-md-9 -->
-  </div> <!-- /row -->
-</div> <!-- /container -->
+            <div class="ratings">
+              <p class="pull-right">10 đánh giá</p>
+              <p>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                4.0 sao
+              </p>
+            </div>
 
-<!-- jQuery (bắt buộc trước xZoom) -->
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row -->
+      </div><!-- /.thumbnail -->
+
+      <!-- Khối review tổng + nút Viết đánh giá -->
+      <div class="well">
+        <div class="text-right">
+          <a class="btn btn-success">Viết đánh giá</a>
+        </div>
+      </div>
+
+      <!-- (Nếu muốn, bạn có thể thêm comment giống file Cheesecake ở đây) -->
+
+    </div><!-- /.col-sm-8 col-md-9 -->
+  </div><!-- /.row -->
+</div><!-- /.container -->
+
+<!-- jQuery (PHẢI trước xzoom) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- xZoom JS - dùng CDN giống file Cheesecake -->
+<!-- xZoom JS: giống cách bạn dùng trong file Cheesecake -->
 <script src="https://cdn.jsdelivr.net/npm/xzoom@1.0.15/dist/xzoom.min.js"></script>
 <script>
   $(document).ready(function () {
     $('.xzoom, .xzoom-gallery').xzoom({
       position: 'right',
-      zoomWidth: 600,   // cho to hơn một chút
+      zoomWidth: 500,
       tint: '#333',
-      Xoffset: 20,
-      title: false
+      Xoffset: 15
     });
   });
 </script>
